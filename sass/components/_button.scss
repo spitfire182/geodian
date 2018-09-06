@@ -1,0 +1,18 @@
+.btn {
+    font-family: "Montserrat";
+    color: $color-grey-dark-2;
+    font-weight: 700;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    &::after {
+        content: "\25B8";
+        margin-left: 1rem;
+        transition: all .4s;
+    }
+
+    &:hover::after {
+        margin-left: 2rem;
+    }
+  }
