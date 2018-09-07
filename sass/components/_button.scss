@@ -1,18 +1,48 @@
 .btn {
-    font-family: "Montserrat";
-    color: $color-grey-dark-2;
-    font-weight: 700;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
 
-    &::after {
-        content: "\25B8";
-        margin-left: 1rem;
-        transition: all .4s;
+    &:link,
+    &:visited {
+        font-family: "Montserrat";
+        color: $color-grey-dark-2;
+        cursor: pointer;
+        text-decoration: none;
     }
 
-    &:hover::after {
-        margin-left: 2rem;
+    &-transparent {
+        font-size: 1.5rem;
+        font-weight: 700;
+        border: 0;
+        background-color: transparent;
+
+        &::after {
+            content: "\25B8";
+            margin-left: 1rem;
+            transition: all .4s ease;
+        }
+    
+        &:hover::after {
+            margin-left: 2rem;
+        }
+    }
+
+    &-round {
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding: 2rem 5rem;
+        border: 3px solid $color-grey-dark-2;
+        border-radius: 100px;
+        transition: all .4s ease;
+
+        &:hover {
+            background-color: $color-grey-dark-2;
+            color: $color-white;
+        }
+
+        &--portfolio {
+            grid-row: 6;
+            grid-column: portfolio-start / portfolio-end;
+            align-self: center;
+            justify-self: center;
+        }
     }
   }

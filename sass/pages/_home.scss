@@ -2,7 +2,7 @@
     display: grid;
     grid-template-rows: 100vh repeat(3, minmax(min-content, 30rem));
     //grid-template-columns: [nav-start] 10rem [nav-end page-start] minmax(5rem, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [content-end] minmax(5rem, 1fr) [page-end];
-    grid-template-columns: [page-start] minmax(10rem, 1fr) [content-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [content-end] minmax(10rem, 1fr) [page-end];
+    grid-template-columns: [page-start] minmax(12rem, 1fr) [content-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [content-end] minmax(12rem, 1fr) [page-end];
     //grid-template-columns: repeat(2, 1fr);
 }
 
@@ -16,12 +16,11 @@
 }
 
 .header {
-    background-image: linear-gradient(rgba($color-white, .95), rgba($color-white, .95)), url(/img/header-background.jpg);
+    background-image: linear-gradient(rgba($color-white, .95), rgba($color-white, .95)), url(../img/header-background.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
-
-    //grid-column: page-start / page-end;
+    
     grid-column: page-start / page-end;
 
     display: grid;
@@ -30,7 +29,10 @@
     grid-template-columns: [header-col-start] 55vw [header-col-text-start] 35vw [header-col-text-end] 1fr [header-col-end];
 
     &__bg-dark {
-        background-image: linear-gradient(rgba(#000, .75), rgba(#000, .75));
+        background-image: linear-gradient(rgba(#000, .95), rgba(#000, .95)), url(../img/header-background.jpg);
+        opacity: .8;
+        background-position: center;
+        background-size: cover;
         height: 100vh;
         clip-path: polygon(0 0, 50% 0, 50% 50%, 0 100%);
 
@@ -51,7 +53,7 @@
         height: 70vh;
         background-color: yellow;
         clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-        background-image: linear-gradient(rgba($color-primary, .9), rgba($color-primary, .9)), url(/img/header-polygon.jpg);
+        background-image: linear-gradient(rgba($color-primary, .9), rgba($color-primary, .9)), url(../img/header-polygon.jpg);
         background-position: center;
         background-size: cover;
     }
@@ -70,48 +72,48 @@
 }
 
 .portfolio {
-    padding: 8rem 0;
+    padding: 12rem 12rem;
     grid-column: content-start / content-end;
 
     display: grid;
-    grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
-    grid-template-rows: repeat(5, min-content);
-    grid-column-gap: 5rem;
+    grid-template-columns: [portfolio-start] repeat(6, [col-left-start] 1fr [col-left-end]) 1fr repeat(6, [col-right-start] 1fr [col-right-end]) [portfolio-end];
+    grid-template-rows: repeat(5, min-content) 25rem;
+    //grid-column-gap: 1rem;
 
     &-item--1 {
-        grid-column: col-start 2 / col-end 4;
+        grid-column: col-left-start 2 / col-left-end 4;
         grid-row: 1;
     }
 
     &-item--2 {
-        grid-column: col-start 6 / col-end 12;
+        grid-column: col-right-start 1 / col-right-end 6;
         grid-row: 2;
         margin-top: -5rem;
     }
 
     &-item--3 {
-        grid-column: col-start 3 / col-end 5;
+        grid-column: col-left-start 3 / col-left-end 5;
         grid-row: 3;
         margin-top: -7rem;
     }
 
     &-item--4 {
-        grid-column: col-start 7 / col-end 11;
+        grid-column: col-right-start 2 / col-right-end 5;
         grid-row: 4;
         margin-top: -7rem;
     }
 
     &-item--5 {
-        grid-column: col-start 1 / col-end 5;
+        grid-column: col-left-start 1 / col-left-end 5;
         grid-row: 5;
         margin-top: -7rem;
     }
 }
 
 .about {
-    background-color: darkslategray;
+    grid-column: col-start 1 / col-end 6;
 
-    grid-column: content-start / content-end;
+    padding: 12rem 0;
 }
 
 .contact {
@@ -119,3 +121,83 @@
 
     grid-column: content-start / content-end;
 }
+
+
+.Description {
+    font-size: 14px;
+    font-family: "Ubuntu";
+    color: rgb( 102, 102, 102 );
+    line-height: 2.286;
+  }
+
+  .Headline {
+    font-size: 42px;
+    font-family: "Montserrat";
+    color: #262626;
+    font-weight: bold;
+    line-height: 0.667;
+    position: absolute;
+    left: 373px;
+    top: 298px;
+    width: 209px;
+    height: 33px;
+    z-index: 15;
+  }
+
+  .Skill_Name {
+  }
+
+  .Score {
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: rgb( 64, 64, 64 );
+    font-weight: bold;
+    line-height: 1.75;
+    position: absolute;
+    left: 640px;
+    top: 805px;
+    width: 33px;
+    height: 13px;
+    z-index: 31;
+  }
+
+  
+  .Message {
+    font-size: 14px;
+    font-family: "Ubuntu";
+    color: rgb( 204, 204, 204 );
+    line-height: 2.286;
+    position: absolute;
+    left: 376px;
+    top: 608px;
+    width: 55px;
+    height: 13px;
+    z-index: 31;
+  }
+
+  
+  .Line {
+    background-color: rgb( 204, 204, 204 );
+    position: absolute;
+    left: 376px;
+    top: 698px;
+    width: 330px;
+    height: 2px;
+    z-index: 32;
+  }
+
+  
+  .Project_Details {
+    font-size: 14px;
+    font-family: "Ubuntu";
+    color: rgb( 102, 102, 102 );
+    line-height: 2.286;
+    text-align: right;
+    position: absolute;
+    left: 1374px;
+    top: 393px;
+    width: 103px;
+    height: 138px;
+    z-index: 17;
+  }
+  

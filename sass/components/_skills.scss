@@ -1,0 +1,68 @@
+.skills {
+    display: grid;
+    grid-template-columns: minmax(20rem, 40rem);
+    grid-template-rows: repeat(3, min-content);
+    grid-gap: 5rem;
+
+    &__skill,
+    &__percentage {
+    font-size: 1.6rem;
+    color: $color-grey;
+    font-weight: 700;
+    line-height: 1.75;
+    }
+
+    &__box {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        position: relative;
+
+
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: -1.5rem;
+            left: 0;
+            content: "";
+            height: 6px;
+            border-radius: 100px;
+        }
+
+        &::before {  
+            width: 100%;          
+            background-color: $color-grey-light;
+        }
+
+        &::after {
+            background-color: $color-primary;
+            width: 0;          
+        }
+    
+
+        &--1 {
+            grid-row: 1 / 2;
+
+            &::after {
+                width: 90%;
+            }
+        }
+
+        &--2 {
+            grid-row: 2 / 3;
+
+            &::after {
+                width: 70%;
+            }
+        }
+
+        &--3 {
+            grid-row: 3 / 4;
+
+            &::after {
+                width: 80%;
+            }
+        }
+    }
+}
