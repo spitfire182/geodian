@@ -40,6 +40,16 @@ body {
   .heading-4--portfolio {
     margin-top: 2rem; }
 
+.heading-5 {
+  font-size: 1.4rem;
+  font-family: "Ubuntu";
+  color: #262626; }
+
+.heading-6 {
+  font-size: 1.2rem;
+  font-family: "Ubuntu";
+  color: #262626; }
+
 .paragraph {
   font-size: 1.4rem;
   font-family: "Ubuntu";
@@ -87,6 +97,14 @@ body {
     transition: all .4s ease; }
   .btn-transparent:hover::after {
     margin-left: 2rem; }
+  .btn-transparent-project::after {
+    content: ""; }
+  .btn-transparent-project::before {
+    content: "\25C2";
+    margin-right: 1rem;
+    transition: all .4s ease; }
+  .btn-transparent-project:hover::before {
+    margin-right: 2rem; }
 
 .btn-round {
   font-size: 1.6rem;
@@ -103,6 +121,48 @@ body {
     grid-column: portfolio-start / portfolio-end;
     align-self: center;
     justify-self: center; }
+
+.form {
+  grid-row: 4;
+  display: grid;
+  grid-row-gap: 3rem; }
+  .form__group {
+    position: relative; }
+    .form__group > button {
+      background-color: #fff;
+      margin-top: 4rem; }
+  .form__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    font-weight: 400;
+    padding: 2rem 0;
+    background-color: #fff;
+    border: 0;
+    border-bottom: 2px solid #bebebe;
+    width: 60%;
+    transition: all .4s ease; }
+    .form__input--message {
+      padding: 1rem 0 10rem 0; }
+    .form__input:focus {
+      outline: none;
+      border-bottom: 2px solid #262626; }
+    .form__input:focus:invalid {
+      border-bottom: 2px solid coral; }
+    .form__input::-webkit-input-placeholder {
+      color: #bebebe; }
+  .form__label {
+    font-size: 1.2rem;
+    color: #ffde00;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    transition: all .4s ease; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 1;
+    font-size: 1.5rem;
+    visibility: hidden;
+    transform: translateY(2rem); }
 
 .portfolio-item {
   display: grid;
@@ -135,7 +195,66 @@ body {
     top: -2rem;
     left: 2rem; }
 
+.project {
+  grid-column: content-start / content-end;
+  padding: 10rem 0;
+  display: grid;
+  grid-template-rows: repeat(4, min-content);
+  grid-template-columns: 7fr 1fr 3fr;
+  grid-row-gap: 5rem; }
+  .project__description {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-row-gap: 5rem; }
+  .project__details {
+    grid-row: 2 / 3;
+    grid-column: 3 / -1;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-row-gap: 2rem; }
+  .project__item {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+    padding: .3rem 0; }
+  .project__item-details {
+    justify-self: end;
+    grid-column: 2;
+    padding: .5rem 0;
+    font-size: 1.2rem;
+    color: #666; }
+  .project__photos {
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr 1fr 4fr;
+    grid-template-rows: repeat(3, min-content); }
+  .project__img {
+    width: 100%;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2); }
+    .project__img:not(:first-child) {
+      margin-top: -3rem; }
+    .project__img--1 {
+      grid-row: 1 / 2;
+      grid-column: 1 / 4; }
+    .project__img--2 {
+      grid-row: 2 / 3;
+      grid-column: 5 / -1; }
+    .project__img--3 {
+      grid-row: 3 / 4;
+      grid-column: 2 / 3; }
+
+.btn-transparent-project {
+  grid-row: 4; }
+
+.heading-5--project {
+  margin-top: 5rem; }
+
+.heading-6--project {
+  grid-column: 1; }
+
 .skills {
+  grid-row: 6;
   display: grid;
   grid-template-columns: minmax(20rem, 40rem);
   grid-template-rows: repeat(3, min-content);
@@ -256,12 +375,71 @@ body {
     margin-top: -7rem; }
 
 .about {
-  grid-column: col-start 1 / col-end 6;
-  padding: 12rem 0; }
+  grid-column: content-start / page-end;
+  display: grid;
+  grid-template-columns: 7fr 8rem 5fr;
+  grid-template-rows: 10rem repeat(6, min-content) 20rem; }
+  .about .heading-2--about {
+    grid-row: 2; }
+  .about .paragraph--about-1 {
+    grid-row: 3; }
+  .about .heading-3--about {
+    grid-row: 4; }
+  .about .paragraph--about-2 {
+    grid-row: 5; }
+  .about__triangle-parent {
+    grid-column: 3 / -1;
+    grid-row: 1 / 6;
+    filter: drop-shadow(0 0 1rem #ffde00);
+    z-index: 2; }
+  .about__triangle {
+    height: 100%;
+    background-color: yellow;
+    clip-path: polygon(100% 0, 100% 90%, 85% 100%, 0 60%, 0 0);
+    background-image: linear-gradient(rgba(255, 222, 0, 0.9), rgba(255, 222, 0, 0.9)), url(../img/about-background.jpg);
+    background-position: right;
+    background-size: cover; }
+  .about__bg-dark {
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 40% 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url(../img/about-background.jpg);
+    opacity: .8;
+    background-position: right;
+    background-size: cover;
+    z-index: 1;
+    grid-row: 1 / -1;
+    grid-column: 3 / -1; }
 
 .contact {
-  background-color: darkseagreen;
-  grid-column: content-start / content-end; }
+  grid-column: content-start / page-end;
+  display: grid;
+  grid-template-columns: 7fr 8rem 5fr;
+  grid-template-rows: 10rem repeat(3, min-content) 20rem; }
+  .contact .heading-2--contact {
+    grid-row: 2; }
+  .contact .paragraph--contact {
+    grid-row: 3; }
+  .contact__triangle-dark-parent {
+    grid-column: 3 / -1;
+    grid-row: 1 / 5;
+    z-index: 2; }
+  .contact__triangle-dark {
+    height: 100%;
+    clip-path: polygon(100% 0, 100% 70%, 0 35%, 0 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url(../img/contact-background.jpg);
+    opacity: .8;
+    background-position: right;
+    background-size: cover; }
+  .contact__triangle-parent {
+    grid-column: 3 / -1;
+    grid-row: 3 / -1;
+    filter: drop-shadow(0 0 1rem #ffde00);
+    z-index: 2; }
+  .contact__triangle {
+    height: 100%;
+    clip-path: polygon(60% 0, 100% 15%, 100% 100%, 0 100%, 0 22%);
+    background-image: linear-gradient(rgba(255, 222, 0, 0.9), rgba(255, 222, 0, 0.9)), url(../img/contact-background.jpg);
+    background-position: right;
+    background-size: cover; }
 
 .Description {
   font-size: 14px;

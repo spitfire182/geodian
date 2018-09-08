@@ -111,15 +111,87 @@
 }
 
 .about {
-    grid-column: col-start 1 / col-end 6;
+    grid-column: content-start / page-end;  
 
-    padding: 12rem 0;
+    display: grid;
+    grid-template-columns: 7fr 8rem 5fr;
+    grid-template-rows: 10rem repeat(6, min-content) 20rem;
+
+    .heading-2--about {grid-row: 2;}
+    .paragraph--about-1 {grid-row: 3;}
+    .heading-3--about {grid-row: 4;}
+    .paragraph--about-2 {grid-row: 5;}
+
+    
+
+    &__triangle-parent {
+        grid-column: 3 / -1;
+        grid-row: 1 / 6;
+        filter: drop-shadow(0 0 1rem $color-primary);
+        z-index: 2;
+    }
+
+    &__triangle {
+        height: 100%;
+        background-color: yellow;
+        clip-path: polygon(100% 0, 100% 90%, 85% 100%, 0 60%, 0 0);
+        background-image: linear-gradient(rgba($color-primary, .9), rgba($color-primary, .9)), url(../img/about-background.jpg);
+        background-position: right;
+        background-size: cover;
+    }
+
+    &__bg-dark {
+        clip-path: polygon(40% 0, 100% 0, 100% 100%, 40% 100%);
+        background-image: linear-gradient(rgba(#000, .95), rgba(#000, .95)), url(../img/about-background.jpg);
+        opacity: .8;
+        background-position: right;
+        background-size: cover;
+        z-index: 1;
+
+        grid-row: 1 / -1;
+        grid-column: 3 / -1;
+    }
 }
 
 .contact {
-    background-color: darkseagreen;
+    grid-column: content-start / page-end;
 
-    grid-column: content-start / content-end;
+    display: grid;
+    grid-template-columns: 7fr 8rem 5fr;
+    grid-template-rows: 10rem repeat(3, min-content) 20rem;
+
+    .heading-2--contact {grid-row: 2;}
+    .paragraph--contact {grid-row: 3;}
+
+    &__triangle-dark-parent {
+        grid-column: 3 / -1;
+        grid-row: 1 / 5;
+        z-index: 2;
+    }
+
+    &__triangle-dark {
+        height: 100%;
+        clip-path: polygon(100% 0, 100% 70%, 0 35%, 0 0);
+        background-image: linear-gradient(rgba(#000, .95), rgba(#000, .95)), url(../img/contact-background.jpg);
+        opacity: .8;
+        background-position: right;
+        background-size: cover;
+    }
+
+    &__triangle-parent {
+        grid-column: 3 / -1;
+        grid-row: 3 / -1;
+        filter: drop-shadow(0 0 1rem $color-primary);
+        z-index: 2;
+    }
+
+    &__triangle {
+        height: 100%;
+        clip-path: polygon(60% 0, 100% 15%, 100% 100%, 0 100%, 0 22%);
+        background-image: linear-gradient(rgba($color-primary, .9), rgba($color-primary, .9)), url(../img/contact-background.jpg);
+        background-position: right;
+        background-size: cover;
+    }
 }
 
 
@@ -190,7 +262,7 @@
   .Project_Details {
     font-size: 14px;
     font-family: "Ubuntu";
-    color: rgb( 102, 102, 102 );
+    color: #666666;
     line-height: 2.286;
     text-align: right;
     position: absolute;

@@ -23,6 +23,22 @@
         &:hover::after {
             margin-left: 2rem;
         }
+
+        &-project {
+            &::after {
+                content: "";
+            }
+
+            &::before {
+                content: "\25C2";
+                margin-right: 1rem;
+                transition: all .4s ease;
+            }
+
+            &:hover::before {
+                margin-right: 2rem;
+            }
+        }
     }
 
     &-round {

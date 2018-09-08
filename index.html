@@ -74,12 +74,12 @@
             <a href="#" class="btn btn-round btn-round--portfolio">Load More</a>
         </section>
         <section class="about">
-            <h3 class="heading-2 mar-bot-md">About Me</h3>
-            <p class="paragraph mar-bot-bg">
+            <h2 class="heading-2 heading-2--about mar-bot-md">About Me</h2>
+            <p class="paragraph paragraph--about-1 mar-bot-bg">
                 Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel sceleris.
             </p>
-            <h3 class="heading-3 mar-bot-sm">My Skills</h3>
-            <p class="paragraph mar-bot-md">
+            <h3 class="heading-3 heading-3--about mar-bot-sm">My Skills</h3>
+            <p class="paragraph paragraph--about-2 mar-bot-md">
                 Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper.
             </p>
             <div class="skills">
@@ -96,12 +96,89 @@
                     <p class="skills__percentage">80%</p>
                 </div>
             </div>
-            <div class="about__hexagon"></div>
+            <div class="about__triangle-parent">
+                <div class="about__triangle"></div>
+            </div>
             <div class="about__bg-dark"></div>
         </section>
         <section class="contact">
-            Contact
+            <h2 class="heading-2 heading-2--contact mar-bot-md">Contact</h2>
+            <p class="paragraph paragraph--contact mar-bot-bg">
+                Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum.
+            </p>
+            <form action="#" class="form">
+                <div class="form__group form__group-name">
+                    <input type="text" class="form__input" id="name" placeholder="Your Name" required>
+                    <label for="name" class="form__label">Your Name</label>
+                </div>
+                <div class="form__group form__group-email">
+                    <input type="email" class="form__input" id="email" placeholder="Your E-Mail" required>
+                    <label for="email" class="form__label">Your E-Mail</label>
+                </div>
+                <div class="form__group form__group-message">
+                    <input type="text" class="form__input form__input--message" id="message" placeholder="Message" required>
+                    <label for="message" class="form__label">Message</label>
+                </div>
+                <div class="form__group">
+                    <button class="btn btn-round">Send Message</button>
+                </div>
+            </form>
+            <div class="contact__triangle-dark-parent">
+                <div class="contact__triangle-dark"></div>
+            </div>
+            <div class="contact__triangle-parent">
+                <div class="contact__triangle"></div>
+            </div>
         </section>
+        <div class="project">
+            <h3 class="heading-3">My First Project for You</h3>
+            <div class="project__description">
+                <p class="paragraph">
+                    Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+                </p>
+                <p class="paragraph">
+                    Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis molli.
+                </p>
+                <p class="paragraph">
+                    Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                </p>
+                <p class="paragraph">
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue.
+                </p>
+            </div>
+            <div class="project__details">
+                <h5 class="heading-5">Project Details</h5>
+                <div class="project__item-box">
+                    <div class="project__item">
+                        <h6 class="heading-6 heading-6--project">Date</h6>
+                        <p class="project__item-details">January, 2, 2017</p>
+                    </div>
+                    <div class="project__item">
+                        <h6 class="heading-6 heading-6--project">Category</h6>
+                        <p class="project__item-details">Web Design</p>
+                        <p class="project__item-details">Graphic Design</p>
+                        <p class="project__item-details">Consultance</p>
+                    </div>
+                    <div class="project__item">
+                        <h6 class="heading-6 heading-6--project">Client</h6>
+                        <p class="project__item-details">Rocian Studio</p>
+                    </div>
+                    <h5 class="heading-5 heading-5--project">Share This Project</h5>
+                    <div class="project__social-icons">
+                        <a href="" class="project__link"><i class="icon"></i></a>
+                        <a href="" class="project__link"><i class="icon"></i></a>
+                        <a href="" class="project__link"><i class="icon"></i></a>
+                        <a href="" class="project__link"><i class="icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project__photos">
+                <img src="img/project-1.jpg" alt="Project image 1" class="project__img project__img--1">
+                <img src="/img/project-2.jpg" alt="Project image 2" class="project__img project__img--2">
+                <img src="/img/project-3.jpg" alt="Project image 3" class="project__img project__img--3">
+            </div>
+            <a href="#" class="btn btn-transparent btn-transparent-project">Back to Portfolio</a>
+        </div>
     </div>
 </body>
 
