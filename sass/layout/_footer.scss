@@ -1,0 +1,11 @@
+.footer {
+    grid-column: content-start / content-end;
+    text-align: center;
+    align-content: end;
+    display: grid;
+
+    &__copy {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+}

@@ -1,18 +1,44 @@
 .container {
     display: grid;
-    grid-template-rows: 100vh repeat(3, minmax(min-content, 30rem));
-    //grid-template-columns: [nav-start] 10rem [nav-end page-start] minmax(5rem, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [content-end] minmax(5rem, 1fr) [page-end];
+    grid-template-rows: 100vh repeat(4, minmax(min-content, 10rem));
     grid-template-columns: [page-start] minmax(12rem, 1fr) [content-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [content-end] minmax(12rem, 1fr) [page-end];
     //grid-template-columns: repeat(2, 1fr);
+
+    background-color: white;
 }
 
-.navigation {
-    background-color: red;
+.logo {
+    position: fixed;
+    top: 4rem;
+    left: 4rem;
+    z-index: 20;
+    background-color: transparent;
+    color: white;
+    mix-blend-mode: exclusion;
 
-    grid-column: nav-start / nav-end;
-    grid-row: 1 / -1;
+    display: flex;
+    align-items: center;
 
-    display: none;
+    &__img {
+        width: 100%;
+        margin-right: 1rem;
+    }
+
+    &__link:visited,
+    &__link:link {
+        text-decoration: none;
+        color: #fff;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+.social-icons-fixed {
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    z-index: 20;
 }
 
 .header {
@@ -20,6 +46,7 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    background-color: white;
     
     grid-column: page-start / page-end;
 
@@ -34,7 +61,7 @@
         background-position: center;
         background-size: cover;
         height: 100vh;
-        clip-path: polygon(0 0, 50% 0, 50% 50%, 0 100%);
+        clip-path: polygon(0 0, 50% 0, 50% 50%, 5% 100%, 0 100%);
 
         grid-row: header-start / header-end;
         grid-column: header-col-start / header-col-end;
@@ -78,7 +105,6 @@
     display: grid;
     grid-template-columns: [portfolio-start] repeat(6, [col-left-start] 1fr [col-left-end]) 1fr repeat(6, [col-right-start] 1fr [col-right-end]) [portfolio-end];
     grid-template-rows: repeat(5, min-content) 25rem;
-    //grid-column-gap: 1rem;
 
     &-item--1 {
         grid-column: col-left-start 2 / col-left-end 4;
@@ -193,83 +219,3 @@
         background-size: cover;
     }
 }
-
-
-.Description {
-    font-size: 14px;
-    font-family: "Ubuntu";
-    color: rgb( 102, 102, 102 );
-    line-height: 2.286;
-  }
-
-  .Headline {
-    font-size: 42px;
-    font-family: "Montserrat";
-    color: #262626;
-    font-weight: bold;
-    line-height: 0.667;
-    position: absolute;
-    left: 373px;
-    top: 298px;
-    width: 209px;
-    height: 33px;
-    z-index: 15;
-  }
-
-  .Skill_Name {
-  }
-
-  .Score {
-    font-size: 16px;
-    font-family: "Montserrat";
-    color: rgb( 64, 64, 64 );
-    font-weight: bold;
-    line-height: 1.75;
-    position: absolute;
-    left: 640px;
-    top: 805px;
-    width: 33px;
-    height: 13px;
-    z-index: 31;
-  }
-
-  
-  .Message {
-    font-size: 14px;
-    font-family: "Ubuntu";
-    color: rgb( 204, 204, 204 );
-    line-height: 2.286;
-    position: absolute;
-    left: 376px;
-    top: 608px;
-    width: 55px;
-    height: 13px;
-    z-index: 31;
-  }
-
-  
-  .Line {
-    background-color: rgb( 204, 204, 204 );
-    position: absolute;
-    left: 376px;
-    top: 698px;
-    width: 330px;
-    height: 2px;
-    z-index: 32;
-  }
-
-  
-  .Project_Details {
-    font-size: 14px;
-    font-family: "Ubuntu";
-    color: #666666;
-    line-height: 2.286;
-    text-align: right;
-    position: absolute;
-    left: 1374px;
-    top: 393px;
-    width: 103px;
-    height: 138px;
-    z-index: 17;
-  }
-  

@@ -1,0 +1,35 @@
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: transparent;
+    color: white;
+    mix-blend-mode: exclusion;
+
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        transform: rotate(-90deg) translateX(7rem);
+        margin-top: 9rem;
+        text-align: center;
+    }
+
+    &__link {
+        padding: 2rem;
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: white;
+        background-color: transparent;
+        transition: all .4s ease;
+    }
+
+    &__link:hover,
+    &__link:active {
+        color: $color-primary;
+    }
+}

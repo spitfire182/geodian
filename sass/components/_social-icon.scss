@@ -1,0 +1,16 @@
+.social-icon {
+
+    &:link,
+    &:visited {
+        color: $color-grey-dark-2;
+        background-color: transparent;
+        font-size: 1.4rem;
+        padding: 1rem 0;
+        margin: 2rem 2rem 2rem 0;
+        transition: all .4s ease;
+    }
+
+    &:hover {
+        color: $color-primary;
+    }
+}
