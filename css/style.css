@@ -423,7 +423,7 @@ body {
   grid-template-columns: [header-col-start] 55vw [header-col-text-start] 35vw [header-col-text-end] 1fr [header-col-end]; }
   @media only screen and (max-width: 50em) {
     .header {
-      grid-template-rows: [header-start logo-start] 5vh [logo-end hex-start] 40vh [hex-end text-start] 55vh [text-end header-end]; } }
+      grid-template-rows: [header-start logo-start] 5vh [logo-end hex-start] 25vh [hex-end text-start] 70vh [text-end header-end]; } }
   .header__bg-dark {
     background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url(../img/header-background.jpg);
     opacity: .8;
@@ -469,7 +469,8 @@ body {
   grid-template-rows: repeat(5, min-content) 25rem; }
   @media only screen and (max-width: 62.5em) {
     .portfolio {
-      padding: 6rem 0; } }
+      padding: 6rem 0;
+      grid-template-rows: repeat(5, min-content) 15rem; } }
   .portfolio-item--1 {
     grid-column: col-left-start 2 / col-left-end 4;
     grid-row: 1; }
@@ -519,6 +520,9 @@ body {
     grid-row: 1 / 6;
     filter: drop-shadow(0 0 1rem #ffde00);
     z-index: 2; }
+    @media only screen and (max-width: 62.5em) {
+      .about__triangle-parent {
+        display: none; } }
   .about__triangle {
     height: 100%;
     background-color: yellow;

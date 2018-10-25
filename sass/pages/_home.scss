@@ -55,7 +55,7 @@
     grid-template-columns: [header-col-start] 55vw [header-col-text-start] 35vw [header-col-text-end] 1fr [header-col-end];
 
     @media only screen and (max-width: 50em) {
-        grid-template-rows: [header-start logo-start] 5vh [logo-end hex-start] 40vh [hex-end text-start] 55vh [text-end header-end];
+        grid-template-rows: [header-start logo-start] 5vh [logo-end hex-start] 25vh [hex-end text-start] 70vh [text-end header-end];
     }
 
     &__bg-dark {
@@ -116,6 +116,7 @@
 
     @media only screen and (max-width: 62.5em) {
         padding: 6rem 0;
+        grid-template-rows: repeat(5, min-content) 15rem;
     }
 
     &-item--1 {
@@ -184,6 +185,10 @@
         grid-row: 1 / 6;
         filter: drop-shadow(0 0 1rem $color-primary);
         z-index: 2;
+
+        @media only screen and (max-width: 62.5em) {
+            display: none;
+        }
     }
 
     &__triangle {
