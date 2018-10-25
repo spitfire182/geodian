@@ -2,7 +2,6 @@
     display: grid;
     grid-template-rows: 100vh repeat(4, minmax(min-content, 10rem));
     grid-template-columns: [page-start] minmax(12rem, 1fr) [content-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [content-end] minmax(12rem, 1fr) [page-end];
-    //grid-template-columns: repeat(2, 1fr);
 
     background-color: white;
 }
@@ -55,6 +54,10 @@
     grid-template-rows: [header-start logo-start] 5vh [logo-end hex-start] 60vh [hex-end text-start] 35vh [text-end header-end];
     grid-template-columns: [header-col-start] 55vw [header-col-text-start] 35vw [header-col-text-end] 1fr [header-col-end];
 
+    @media only screen and (max-width: 50em) {
+        grid-template-rows: [header-start logo-start] 5vh [logo-end hex-start] 40vh [hex-end text-start] 55vh [text-end header-end];
+    }
+
     &__bg-dark {
         background-image: linear-gradient(rgba(#000, .95), rgba(#000, .95)), url(../img/header-background.jpg);
         opacity: .8;
@@ -83,6 +86,11 @@
         background-image: linear-gradient(rgba($color-primary, .9), rgba($color-primary, .9)), url(../img/header-polygon.jpg);
         background-position: center;
         background-size: cover;
+
+        @media only screen and (max-width: 50em) {
+            width: 95vw;
+            height: 105vw;
+        }
     }
 
     &__text {
@@ -106,9 +114,17 @@
     grid-template-columns: [portfolio-start] repeat(6, [col-left-start] 1fr [col-left-end]) 1fr repeat(6, [col-right-start] 1fr [col-right-end]) [portfolio-end];
     grid-template-rows: repeat(5, min-content) 25rem;
 
+    @media only screen and (max-width: 62.5em) {
+        padding: 6rem 0;
+    }
+
     &-item--1 {
         grid-column: col-left-start 2 / col-left-end 4;
         grid-row: 1;
+
+        @media only screen and (max-width: 62.5em) {
+            grid-column: col-left-start 2 / col-right-end 5;
+        }
     }
 
     &-item--2 {
@@ -133,6 +149,19 @@
         grid-column: col-left-start 1 / col-left-end 5;
         grid-row: 5;
         margin-top: -7rem;
+    }
+
+    & [class*="portfolio-item--"] {
+        @media only screen and (max-width: 62.5em) {
+            grid-column: col-left-start 2 / col-right-end 5;
+            grid-row-gap: 1rem;
+
+            margin: 0 0 4rem 0;
+        }
+
+        @media only screen and (max-width: 50rem) {
+            grid-column: portfolio-start / portfolio-end;
+        }
     }
 }
 
